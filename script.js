@@ -16,4 +16,17 @@ class NoteManager {
 
         this.noteForm.addEventListener('submit', (e) => this.addNoteHandler(e));
     }
+
+    addNoteHandler(event) {
+        event.preventDefault();
+        const title = this.titleInput.value.trim();
+        const content = this.contentInput.value.trim();
+
+        if (title && content) {
+            const newNote = new Note(title, content);
+            this.notes.push(newNote);
+            this.renderNotes();
+            this.noteForm.reset();
+        }
+    }
 }
