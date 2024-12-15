@@ -29,7 +29,7 @@ class NoteManager {
             this.noteForm.reset();
         }
     }
-    deleteNoteHandler(noteId) {
+    deleteNote(noteId) {
         this.notes = this.notes.filter(note => note.id !== noteId);
         this.renderNotes();
     }
