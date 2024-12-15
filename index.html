@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Gestionnaire de note</title>
 </head>
 <body>
+    <div class="container">
+        <h1>Gestionnaire de Notes</h1>
+        <form class="note-form">
+            <input type="text" id="note-title" placeholder="Titre de la note" required>
+            <textarea id="note-content" placeholder="Contenu de la note" rows="5" required></textarea>
+            <button type="submit">Ajouter une note</button>
+        </form>
+        <div class="notes" id="notes-container"></div>
+    </div>
     
     <script src="script.js"></script>
 </body>
