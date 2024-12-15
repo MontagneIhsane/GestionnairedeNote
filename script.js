@@ -33,4 +33,20 @@ class NoteManager {
         this.notes = this.notes.filter(note => note.id !== noteId);
         this.renderNotes();
     }
+
+    renderNotes() {
+        this.notesContainer.innerHTML = '';
+        this.notes.forEach(note => {
+            const noteElement = document.createElement('div');
+            noteElement.classList.add('note');
+
+            noteElement.innerHTML = `
+                <h2>${note.title}</h2>
+                <p>${note.content}</p>
+                <button onclick="noteManager.deleteNoteHandler(${note.id})">Supprimer</button>
+            `;
+
+            this.notesContainer.appendChild(noteElement);
+        });
+    }
 }
