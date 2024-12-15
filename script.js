@@ -14,10 +14,10 @@ class NoteManager {
         this.titleInput = document.getElementById('note-title');
         this.contentInput = document.getElementById('note-content');
 
-        this.noteForm.addEventListener('submit', (e) => this.addNoteHandler(e));
+        this.noteForm.addEventListener('submit', (e) => this.addNote(e));
     }
 
-    addNoteHandler(event) {
+    addNote(event) {
         event.preventDefault();
         const title = this.titleInput.value.trim();
         const content = this.contentInput.value.trim();
@@ -28,5 +28,9 @@ class NoteManager {
             this.renderNotes();
             this.noteForm.reset();
         }
+    }
+    deleteNoteHandler(noteId) {
+        this.notes = this.notes.filter(note => note.id !== noteId);
+        this.renderNotes();
     }
 }
